@@ -6,4 +6,5 @@ else:
     costs=2.1
 
 total=start_price + costs * km
+
 print("Deine Kosten sind:",total )
