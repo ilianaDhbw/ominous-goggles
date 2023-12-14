@@ -3,7 +3,7 @@ nummer = random.randint(1, 5)
 
 name = input("Hallo,wie lautet dein Name? ")
 number_of_guesses = 0
-print('Nice to meet you {}! Errate meine Zahl, welche zwischen 1 und 5 liegt \nDu hast nur 3 Versuche:'.format(name))
+print('Nice to meet you {}! Errate meine Zahl, welche zwischen 1 und 5 liegt \nDu hast nur 3 Versuche:'.format(name)) #format = Platzhalter -> {}
 
 while number_of_guesses < 3:
     guess = int(input())
