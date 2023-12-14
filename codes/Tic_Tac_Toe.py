@@ -34,14 +34,21 @@ def spieler_eingabe():
         else:
             if spielzug >= 1 and spielzug <= 9:
                 if spielfeld[spielzug] == 'X' or spielfeld[spielzug] == 'O':
-                    print("Das Feld ist bereits belegt - ein anderes wählen!")
+                    print("Das Feld ist bereits belegt - bitte wähle ein anderes !")
                 else:
                     return spielzug
             else:
-                print("Zahl muss zwischen 1 und 9 liegen")
+                print("Die Zahl muss zwischen 1 und 9 liegen")
+
 def spieler_wechseln():
     global spieler_aktuell
     if spieler_aktuell == 'X':
         spieler_aktuell = 'O'
     else:
         spieler_aktuell = 'X'
+
+spielfeld_ausgeben()
+while spiel_aktiv:
+    
+    print ("Spieler " + spieler_aktuell + " ist am Zug")
+    spielzug = spieler_eingabe()
