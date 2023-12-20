@@ -8,14 +8,14 @@ spieler_aktuell = 'X'
 
 spielfeld = [" ",
              " "," "," ",
-             "4","5","6",
-             "7","8","9"]
+             " "," "," ",
+             " "," "," "]
 
 
 def spielfeld_ausgeben():
-    print (spielfeld[1] + "|" + spielfeld[2] + "|" + spielfeld[3] )
-    print (spielfeld[4] + "|" + spielfeld[5] + "|" + spielfeld[6] )
-    print (spielfeld[7] + "|" + spielfeld[8] + "|" + spielfeld[9] )
+    print (spielfeld[1] + "_|_" + spielfeld[2] + "_|_" + spielfeld[3] )
+    print (spielfeld[4] + "_|_" + spielfeld[5] + "_|_" + spielfeld[6] )
+    print (spielfeld[7] + "_|_" + spielfeld[8] + "_|_" + spielfeld[9] )
 
 
 
@@ -53,3 +53,7 @@ while spiel_aktiv:
     
     print ("Spieler " + spieler_aktuell + " ist am Zug")
     spielzug = spieler_eingabe()
+    if spielzug:
+        spielfeld[spielzug] = spieler_aktuell
+        spielfeld_ausgeben()
+        spieler_wechseln()
