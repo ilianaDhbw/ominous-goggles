@@ -48,6 +48,41 @@ def spieler_wechseln():
     else:
         spieler_aktuell = 'X'
 
+def kontrolle_win():
+
+    # wenn alle 3 Felder gleich sind,hat der Spieler gewonnen
+    # Reihen
+    if spielfeld[1] == spielfeld[2] == spielfeld[3]:
+        return spielfeld[1]
+    if spielfeld[4] == spielfeld[5] == spielfeld[6]:
+        return spielfeld[4]
+    if spielfeld[7] == spielfeld[8] == spielfeld[9]:
+        return spielfeld[7]
+    # Spalten
+    if spielfeld[1] == spielfeld[4] == spielfeld[7]:
+        return spielfeld[1]
+    if spielfeld[2] == spielfeld[5] == spielfeld[8]:
+        return spielfeld[2]
+    if spielfeld[3] == spielfeld[6] == spielfeld[9]:
+        return spielfeld[3]
+    # Diagonalen
+    if spielfeld[1] == spielfeld[5] == spielfeld[9]:
+        return spielfeld[5]
+    if spielfeld[7] == spielfeld[5] == spielfeld[3]:
+        return spielfeld[5]
+
+def kontrolle_unentschieden():
+    if (spielfeld[1] == 'X' or spielfeld[1] == 'O') \
+      and (spielfeld[2] == 'X' or spielfeld[2] == 'O') \
+      and (spielfeld[3] == 'X' or spielfeld[3] == 'O') \
+      and (spielfeld[4] == 'X' or spielfeld[4] == 'O') \
+      and (spielfeld[5] == 'X' or spielfeld[5] == 'O') \
+      and (spielfeld[6] == 'X' or spielfeld[6] == 'O') \
+      and (spielfeld[7] == 'X' or spielfeld[7] == 'O') \
+      and (spielfeld[8] == 'X' or spielfeld[8] == 'O') \
+      and (spielfeld[9] == 'X' or spielfeld[9] == 'O'):
+        return ('unentschieden')
+
 spielfeld_ausgeben()
 while spiel_aktiv:
     
@@ -56,4 +91,17 @@ while spiel_aktiv:
     if spielzug:
         spielfeld[spielzug] = spieler_aktuell
         spielfeld_ausgeben()
+
+        #gewonnen?1
+        
+        gewonnen = kontrolle_win()
+        if gewonnen:
+            print ("Spieler " + gewonnen + " hat gewonnen!")
+            spiel_aktiv = False
+            break
+        # unentschieden?
+        unentschieden = kontrolle_unentschieden()
+        if unentschieden:
+            print ("Spiel ist unentschieden ausgegangen")
+            spiel_aktiv = False
         spieler_wechseln()
