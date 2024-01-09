@@ -92,8 +92,7 @@ while spiel_aktiv:
         spielfeld[spielzug] = spieler_aktuell
         spielfeld_ausgeben()
 
-        #gewonnen?1
-        
+        #gewonnen?
         gewonnen = kontrolle_win()
         if gewonnen:
             print ("Spieler " + gewonnen + " hat gewonnen!")
@@ -105,3 +104,6 @@ while spiel_aktiv:
             print ("Spiel ist unentschieden ausgegangen")
             spiel_aktiv = False
         spieler_wechseln()
+        break
+
+print() 
