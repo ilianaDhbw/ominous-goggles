@@ -1,6 +1,6 @@
 import random
 
-user_action = input("Enter a choice (rock, paper, scissors): ")
+user_action = input("\033[0m"+"Enter a choice (rock, paper, scissors): ")
 possible_actions = ["rock", "paper", "scissors"]
 computer_action = random.choice(possible_actions)
 print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
